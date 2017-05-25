@@ -7,6 +7,7 @@ use Alien::Base::ModuleBuild '0.025';
 my $addcc = "";
 $addcc = "CC=cc " if ( (!can_run('gcc')) && can_run('cc') );
 
+my $class;
 if ($^O eq 'MSWin32') {
   print "Enabling Windows hacks...\n";
   $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::OpenSSL::Builder',
