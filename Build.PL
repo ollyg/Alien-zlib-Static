@@ -46,45 +46,45 @@ else {
 }
 
 my $builder = $class->new (
-	sign => 1,
-	module_name => 'Alien::OpenSSL',
-	license => 'perl',
-	configure_requires => {
-		'Alien::Base::ModuleBuild' => '0.025',
-		'Module::Build' => '0.38',
-		'Test::More' => 0,
-	},
-	requires => {
-		'perl' => '5.8.1',
-		'Alien::Base' => '0.025',
-	},
-	dist_author => 'Johanna Amann <johanna@icir.org>',
-	alien_name => 'openssl',
-	alien_repository => {
-		protocol => 'ftp',
-		host => 'ftp.openssl.org',
-		location => '/source/',
-		pattern  => qr/^openssl-([\d\.]+\w?).tar\.gz$/,
-	},
-	alien_msys => 1,
-	alien_stage_install => 0,
-	alien_build_commands => [
-		$addcc.$addsh.'%pconfig shared --prefix=%s',
-		$addcc.'make',
-	],
-	alien_test_commands => [
-		$addcc.'make test',
-	],
-	alien_install_commands => [
-		'make install_sw',
-	],
-	meta_merge => {
-		resources => {
-			homepage => 'https://github.com/0xxon/alien-openssl',
-			bugtracker => 'https://github.com/0xxon/alien-openssl/issues',
-			repository  => 'git://github.com/0xxon/alien-openssl.git',
-		},
-	},
+    sign => 1,
+    module_name => 'Alien::OpenSSL',
+    license => 'perl',
+    configure_requires => {
+        'Alien::Base::ModuleBuild' => '0.025',
+        'Module::Build' => '0.38',
+        'Test::More' => 0,
+    },
+    requires => {
+        'perl' => '5.8.1',
+        'Alien::Base' => '0.025',
+    },
+    dist_author => 'Johanna Amann <johanna@icir.org>',
+    alien_name => 'openssl',
+    alien_repository => {
+        protocol => 'ftp',
+        host => 'ftp.openssl.org',
+        location => '/source/',
+        pattern  => qr/^openssl-([\d\.]+\w?).tar\.gz$/,
+    },
+    alien_msys => 1,
+    alien_stage_install => 0,
+    alien_build_commands => [
+        $addcc.$addsh.'%pconfig shared --prefix=%s',
+        $addcc.'make',
+    ],
+    alien_test_commands => [
+        $addcc.'make test',
+    ],
+    alien_install_commands => [
+        'make install_sw',
+    ],
+    meta_merge => {
+        resources => {
+            homepage => 'https://github.com/0xxon/alien-openssl',
+            bugtracker => 'https://github.com/0xxon/alien-openssl/issues',
+            repository  => 'git://github.com/0xxon/alien-openssl.git',
+        },
+    },
 );
 
 my %args = $builder->args;
@@ -93,10 +93,10 @@ my $version;
 $version = $args{version} if(exists $args{version});
 
 if ( defined($version) ) {
-	my $location = "/source/openssl-".$version.".tar.gz";
-	print "Downloading from $location\n";
-	$builder->alien_repository->{pattern} = qr#\Qopenssl-$version.tar.gz\E$#;
-	print $builder->alien_repository->{pattern}."\n";
+    my $location = "/source/openssl-".$version.".tar.gz";
+    print "Downloading from $location\n";
+    $builder->alien_repository->{pattern} = qr#\Qopenssl-$version.tar.gz\E$#;
+    print $builder->alien_repository->{pattern}."\n";
 }
 
 $builder->create_build_script;
