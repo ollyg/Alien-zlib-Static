@@ -69,7 +69,7 @@ my $builder = $class->new (
     alien_msys => 1,
     alien_stage_install => 0,
     alien_build_commands => [
-        $addcc.'sh config shared --prefix=%s',
+        $addcc.'sh config shared -fPIC --prefix=%s',
         $addcc.'make',
     ],
     alien_test_commands => [
