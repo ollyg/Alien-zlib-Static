@@ -1,9 +1,6 @@
 Build
-MANIFEST
 MYMETA.json
 MYMETA.yml
-META.json
-META.yml
 Alien-OpenSSL*.tar.gz
 _build/
 _share/
