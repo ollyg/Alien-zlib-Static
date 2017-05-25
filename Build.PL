@@ -98,6 +98,9 @@ if ( defined($version) ) {
     print "Downloading from $location\n";
     $builder->alien_version_check('%{pkg_config} --exact-version '
       . $version .' %n && %{pkg_config} --modversion %n');
+    $builder->alien_repository->{pattern} = qr#\Qopenssl-$version.tar.gz\E$#;
+    print $builder->alien_repository->{pattern}."\n";
+
 }
 
 $builder->create_build_script;
