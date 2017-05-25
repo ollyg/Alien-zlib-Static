@@ -7,11 +7,8 @@ use Alien::Base::ModuleBuild '0.025';
 my $addcc = "";
 $addcc = "CC=cc " if ( (!can_run('gcc')) && can_run('cc') );
 
-my ($addsh, $class);
-
 if ($^O eq 'MSWin32') {
   print "Enabling Windows hacks...\n";
-  $addsh = "sh ";
   $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::OpenSSL::Builder',
                                                code => <<'EOC' );
 
@@ -41,7 +38,6 @@ EOC
 
 }
 else {
-  $addsh = "";
   $class = 'Alien::Base::ModuleBuild';
 }
 
@@ -73,7 +69,7 @@ my $builder = $class->new (
     alien_msys => 1,
     alien_stage_install => 0,
     alien_build_commands => [
-        $addcc.$addsh.'%pconfig shared --prefix=%s',
+        $addcc.'sh config shared --prefix=%s',
         $addcc.'make',
     ],
     alien_test_commands => [
