@@ -45,6 +45,8 @@ else {
   $class = 'Alien::Base::ModuleBuild';
 }
 
+my $minver = '1.1.0f';
+
 my $builder = $class->new (
     sign => 1,
     module_name => 'Alien::OpenSSL',
@@ -66,6 +68,8 @@ my $builder = $class->new (
         location => '/source/',
         pattern  => qr/^openssl-([\d\.]+\w?).tar\.gz$/,
     },
+    alien_version_check => '%{pkg_config} --atleast-version '
+      . $minver .' %n && %{pkg_config} --modversion %n',
     alien_msys => 1,
     alien_stage_install => 0,
     alien_build_commands => [
@@ -95,8 +99,8 @@ $version = $args{version} if(exists $args{version});
 if ( defined($version) ) {
     my $location = "/source/openssl-".$version.".tar.gz";
     print "Downloading from $location\n";
-    $builder->alien_repository->{pattern} = qr#\Qopenssl-$version.tar.gz\E$#;
-    print $builder->alien_repository->{pattern}."\n";
+    $builder->alien_version_check('%{pkg_config} --exact-version '
+      . $version .' %n && %{pkg_config} --modversion %n');
 }
 
 $builder->create_build_script;
