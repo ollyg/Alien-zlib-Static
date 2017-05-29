@@ -32,7 +32,7 @@
    "provides" : {
       "Alien::OpenSSL::Static" : {
          "file" : "lib/Alien/OpenSSL/Static.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -48,6 +48,6 @@
          "url" : "git://github.com/ollyg/alien-openssl-static.git"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_serialization_backend" : "JSON::PP version 2.27400"
 }

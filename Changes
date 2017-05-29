@@ -1,5 +1,8 @@
 Changes for Alien::OpenSSL::Static
 
+* 0.10
+- change name to Alien::OpenSSL::Static
+
 * 0.09
 - require higher Alien::Base version due to test bug
 - fix a test for windows

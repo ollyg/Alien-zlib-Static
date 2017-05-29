@@ -17,7 +17,7 @@ name: Alien-OpenSSL-Static
 provides:
   Alien::OpenSSL::Static:
     file: lib/Alien/OpenSSL/Static.pm
-    version: '0.09'
+    version: '0.10'
 requires:
   Alien::Base: '0.025'
   File::ShareDir: '1.00'
@@ -27,5 +27,5 @@ resources:
   homepage: https://github.com/ollyg/alien-openssl-static
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ollyg/alien-openssl-static.git
-version: '0.09'
+version: '0.10'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.011'
