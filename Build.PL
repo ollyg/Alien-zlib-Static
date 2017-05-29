@@ -26,8 +26,7 @@ my $builder = Alien::Base::ModuleBuild->new (
     },
     alien_version_check => '%{pkg_config} --atleast-version '
       . $minver .' %n && %{pkg_config} --modversion %n',
-    alien_msys => 1,
-    alien_stage_install => 0,
+    alien_stage_install => 1,
     alien_build_commands => [
       './configure --prefix=%s', 'make'
     ],
