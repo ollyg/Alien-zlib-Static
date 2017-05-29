@@ -1,9 +1,11 @@
 Build.PL
 Changes
-lib/Alien/OpenSSL.pm
+lib/Alien/OpenSSL/Static.pm
 MANIFEST			This list of files
 MANIFEST.SKIP
 README
 t/00-use.t
 t/01-signature.t
 t/author-pod.t
+META.yml
+META.json
