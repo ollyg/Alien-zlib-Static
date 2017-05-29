@@ -59,12 +59,10 @@ my $builder = $class->new (
     },
     dist_author => 'Johanna Amann <johanna@icir.org>',
     alien_name => 'openssl',
-    # https://www.openssl.org/source/openssl-1.1.0f.tar.gz
     alien_repository => {
-        protocol => 'https',
-        host => 'www.openssl.org',
-        location => '/source/',
-        pattern  => qr/^openssl-([\d\.]+\w?).tar\.gz$/,
+        protocol => 'local',
+        location => 'source',
+        exact_filename => "openssl-${minver}.tar.gz",
     },
     alien_version_check => '%{pkg_config} --atleast-version '
       . $minver .' %n && %{pkg_config} --modversion %n',
@@ -98,13 +96,11 @@ my $version;
 $version = $args{version} if(exists $args{version});
 
 if ( defined($version) ) {
-    my $location = "/source/openssl-".$version.".tar.gz";
+    my $location = ".../source/openssl-".$version.".tar.gz";
     print "Downloading from $location\n";
     $builder->alien_version_check('%{pkg_config} --exact-version '
       . $version .' %n && %{pkg_config} --modversion %n');
-    $builder->alien_repository->{pattern} = qr#\Qopenssl-$version.tar.gz\E$#;
-    print $builder->alien_repository->{pattern}."\n";
-
+    $builder->alien_repository->{exact_filename} = "openssl-$version.tar.gz";
 }
 
 $builder->create_build_script;
