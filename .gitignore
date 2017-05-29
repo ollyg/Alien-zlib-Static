@@ -1,7 +1,7 @@
 Build
 MYMETA.json
 MYMETA.yml
-Alien-OpenSSL*.tar.gz
+Alien-OpenSSL-Static*.tar.gz
 _build/
 _share/
 _alien/

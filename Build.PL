@@ -10,7 +10,7 @@ $addcc = "CC=cc " if ( (!can_run('gcc')) && can_run('cc') );
 my $class;
 if ($^O eq 'MSWin32') {
   print "Enabling Windows hacks...\n";
-  $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::OpenSSL::Builder',
+  $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::OpenSSL::Static::Builder',
                                                code => <<'EOC' );
 
 use Carp;
@@ -46,7 +46,7 @@ my $minver = '1.1.0f';
 
 my $builder = $class->new (
     sign => 1,
-    module_name => 'Alien::OpenSSL',
+    module_name => 'Alien::OpenSSL::Static',
     license => 'perl',
     configure_requires => {
         'Alien::Base::ModuleBuild' => '0.025',
@@ -81,9 +81,9 @@ my $builder = $class->new (
     ],
     meta_merge => {
         resources => {
-            homepage => 'https://github.com/0xxon/alien-openssl',
-            bugtracker => 'https://github.com/0xxon/alien-openssl/issues',
-            repository  => 'git://github.com/0xxon/alien-openssl.git',
+            homepage => 'https://github.com/ollyg/alien-openssl-static',
+            bugtracker => 'https://github.com/ollyg/alien-openssl-static/issues',
+            repository  => 'git://github.com/ollyg/alien-openssl-static.git',
         },
     },
 );

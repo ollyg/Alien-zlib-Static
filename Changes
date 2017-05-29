@@ -1,4 +1,4 @@
-Changes for Alien::OpenSSL
+Changes for Alien::OpenSSL::Static
 
 * 0.09
 - require higher Alien::Base version due to test bug

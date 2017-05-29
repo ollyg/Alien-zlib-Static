@@ -1,4 +1,4 @@
-package Alien::OpenSSL;
+package Alien::OpenSSL::Static;
 
 use strict;
 use warnings;
@@ -13,7 +13,7 @@ __END__
 
 =head1 NAME
 
-Alien::OpenSSL - Alien wrapper for OpenSSL
+Alien::OpenSSL::Static - Alien wrapper for OpenSSL
 
 =head1 SYNOPSIS
 
@@ -21,18 +21,18 @@ Alien::OpenSSL - Alien wrapper for OpenSSL
   use warnings;
 
   use Module::Build;
-  use Alien::OpenSSL;
+  use Alien::OpenSSL::Static;
 
-  my $cflags = Alien::OpenSSL->cflags;
-  my $ldflags = Alien::OpenSSL->libs;
+  my $cflags = Alien::OpenSSL::Static->cflags;
+  my $ldflags = Alien::OpenSSL::Static->libs;
 
   my $builder = Module::Build->new(
-  	module_name => 'my_lib',
-	extra_compiler_flags => $cflags,
-	extra_linker_flags => $ldflags,
-	configure_requires => {
-		'Alien::OpenSSL => 0
-		},
+    module_name => 'my_lib',
+    extra_compiler_flags => $cflags,
+    extra_linker_flags => $ldflags,
+    configure_requires => {
+      'Alien::OpenSSL::Static' => 0
+    },
   );
 
   $builder->create_build_script;

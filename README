@@ -1,11 +1,12 @@
-Alien::OpenSSL - Easy installation of OpenSSL
-=============================================
+Alien::OpenSSL::Static - Easy installation of OpenSSL
+=====================================================
 
 This module is meant to ease the installation of 
 OpenSSL
 
 COPYRIGHT AND LICENCE
 
+Copyright 2017 by Oliver Gorwits
 Copyright 2012 by Johanna Amann
 
 This module is free software; you can redistribute 
