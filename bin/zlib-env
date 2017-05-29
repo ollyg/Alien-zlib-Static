@@ -1,0 +1,12 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Alien::zlib::Static;
+
+my $bindir  = Alien::zlib::Static->bin_dir;
+my $cflags  = Alien::zlib::Static->cflags;
+my $ldflags = Alien::zlib::Static->libs;
+
+exec(qq{$ENV{SHELL} -c 'export PATH="$bindir:\$PATH" CFLAGS="$cflags \$CFLAGS" LDFLAGS="$ldflags \$LDFLAGS";\$SHELL'});

@@ -1,5 +1,5 @@
 ---
-abstract: 'Alien wrapper for OpenSSL'
+abstract: 'Alien wrapper for zlib'
 author:
   - 'Johanna Amann <johanna@icir.org>'
 build_requires: {}
@@ -13,19 +13,19 @@ license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
-name: Alien-OpenSSL-Static
+name: Alien-zlib-Static
 provides:
-  Alien::OpenSSL::Static:
-    file: lib/Alien/OpenSSL/Static.pm
+  Alien::zlib::Static:
+    file: lib/Alien/zlib/Static.pm
     version: '0.10'
 requires:
   Alien::Base: '0.025'
   File::ShareDir: '1.00'
   perl: v5.8.1
 resources:
-  bugtracker: https://github.com/ollyg/alien-openssl-static/issues
-  homepage: https://github.com/ollyg/alien-openssl-static
+  bugtracker: https://github.com/ollyg/alien-zlib-static/issues
+  homepage: https://github.com/ollyg/alien-zlib-static
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/ollyg/alien-openssl-static.git
+  repository: git://github.com/ollyg/alien-zlib-static.git
 version: '0.10'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.011'

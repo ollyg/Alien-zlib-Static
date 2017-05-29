@@ -10,7 +10,7 @@ $addcc = "CC=cc " if ( (!can_run('gcc')) && can_run('cc') );
 my $class;
 if ($^O eq 'MSWin32') {
   print "Enabling Windows hacks...\n";
-  $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::OpenSSL::Static::Builder',
+  $class = Alien::Base::ModuleBuild->subclass( class => 'Alien::zlib::Static::Builder',
                                                code => <<'EOC' );
 
 use Carp;
@@ -42,11 +42,11 @@ else {
   $class = 'Alien::Base::ModuleBuild';
 }
 
-my $minver = '1.1.0f';
+my $minver = '1.2.11';
 
 my $builder = $class->new (
     sign => 1,
-    module_name => 'Alien::OpenSSL::Static',
+    module_name => 'Alien::zlib::Static',
     license => 'perl',
     configure_requires => {
         'Alien::Base::ModuleBuild' => '0.025',
@@ -58,11 +58,11 @@ my $builder = $class->new (
         'Alien::Base' => '0.025',
     },
     dist_author => 'Johanna Amann <johanna@icir.org>',
-    alien_name => 'openssl',
+    alien_name => 'z',
     alien_repository => {
         protocol => 'local',
         location => 'source',
-        exact_filename => "openssl-${minver}.tar.gz",
+        exact_filename => "zlib-${minver}.tar.gz",
     },
     alien_version_check => '%{pkg_config} --atleast-version '
       . $minver .' %n && %{pkg_config} --modversion %n',
@@ -80,13 +80,13 @@ my $builder = $class->new (
     ],
     meta_merge => {
         resources => {
-            homepage => 'https://github.com/ollyg/alien-openssl-static',
-            bugtracker => 'https://github.com/ollyg/alien-openssl-static/issues',
-            repository  => 'git://github.com/ollyg/alien-openssl-static.git',
+            homepage => 'https://github.com/ollyg/alien-zlib-static',
+            bugtracker => 'https://github.com/ollyg/alien-zlib-static/issues',
+            repository  => 'git://github.com/ollyg/alien-zlib-static.git',
         },
     },
     script_files => [
-      'bin/openssl-env'
+      'bin/zlib-env'
     ],
 );
 
@@ -96,11 +96,11 @@ my $version;
 $version = $args{version} if(exists $args{version});
 
 if ( defined($version) ) {
-    my $location = ".../source/openssl-".$version.".tar.gz";
+    my $location = ".../source/zlib-".$version.".tar.gz";
     print "Downloading from $location\n";
     $builder->alien_version_check('%{pkg_config} --exact-version '
       . $version .' %n && %{pkg_config} --modversion %n');
-    $builder->alien_repository->{exact_filename} = "openssl-$version.tar.gz";
+    $builder->alien_repository->{exact_filename} = "zlib-$version.tar.gz";
 }
 
 $builder->create_build_script;

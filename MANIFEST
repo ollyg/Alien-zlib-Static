@@ -1,12 +1,13 @@
-bin/openssl-env
+bin/zlib-env
 Build.PL
 Changes
-lib/Alien/OpenSSL/Static.pm
+lib/Alien/zlib/Static.pm
 MANIFEST			This list of files
 MANIFEST.SKIP
 META.json
 META.yml
 README
+source/zlib-1.2.11.tar.gz
 t/00-use.t
 t/01-signature.t
 t/author-pod.t

@@ -1,5 +1,5 @@
 {
-   "abstract" : "Alien wrapper for OpenSSL",
+   "abstract" : "Alien wrapper for zlib",
    "author" : [
       "Johanna Amann <johanna@icir.org>"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Alien-OpenSSL-Static",
+   "name" : "Alien-zlib-Static",
    "prereqs" : {
       "configure" : {
          "requires" : {
@@ -30,22 +30,22 @@
       }
    },
    "provides" : {
-      "Alien::OpenSSL::Static" : {
-         "file" : "lib/Alien/OpenSSL/Static.pm",
+      "Alien::zlib::Static" : {
+         "file" : "lib/Alien/zlib/Static.pm",
          "version" : "0.10"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/ollyg/alien-openssl-static/issues"
+         "web" : "https://github.com/ollyg/alien-zlib-static/issues"
       },
-      "homepage" : "https://github.com/ollyg/alien-openssl-static",
+      "homepage" : "https://github.com/ollyg/alien-zlib-static",
       "license" : [
          "http://dev.perl.org/licenses/"
       ],
       "repository" : {
-         "url" : "git://github.com/ollyg/alien-openssl-static.git"
+         "url" : "git://github.com/ollyg/alien-zlib-static.git"
       }
    },
    "version" : "0.10",

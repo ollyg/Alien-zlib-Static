@@ -1,13 +1,12 @@
-Alien::OpenSSL::Static - Easy installation of OpenSSL
-=====================================================
+Alien::zlib::Static - Easy installation of zlib
+================================================
 
 This module is meant to ease the installation of 
-OpenSSL
+zlib
 
 COPYRIGHT AND LICENCE
 
 Copyright 2017 by Oliver Gorwits
-Copyright 2012 by Johanna Amann
 
 This module is free software; you can redistribute 
 it and/or modify it under the same terms as Perl 
