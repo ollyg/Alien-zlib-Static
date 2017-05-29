@@ -59,9 +59,10 @@ my $builder = $class->new (
     },
     dist_author => 'Johanna Amann <johanna@icir.org>',
     alien_name => 'openssl',
+    # https://www.openssl.org/source/openssl-1.1.0f.tar.gz
     alien_repository => {
-        protocol => 'ftp',
-        host => 'ftp.openssl.org',
+        protocol => 'https',
+        host => 'www.openssl.org',
         location => '/source/',
         pattern  => qr/^openssl-([\d\.]+\w?).tar\.gz$/,
     },
