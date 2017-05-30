@@ -1,12 +1,12 @@
+#!/usr/bin/env perl
+
 use strict;
 use warnings;
-
 use Alien::Base::ModuleBuild '0.025';
 
 my $minver = '1.2.11';
 
 my $builder = Alien::Base::ModuleBuild->new (
-    sign => 1,
     module_name => 'Alien::zlib::Static',
     license => 'perl',
     configure_requires => {
@@ -28,7 +28,7 @@ my $builder = Alien::Base::ModuleBuild->new (
       . $minver .' %n && %{pkg_config} --modversion %n',
     alien_stage_install => 1,
     alien_build_commands => [
-      './configure --prefix=%s', 'make'
+      './configure --static --prefix=%s', 'make'
     ],
     meta_merge => {
         resources => {
