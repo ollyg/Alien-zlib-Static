@@ -1,7 +1,7 @@
 ---
 abstract: 'Alien wrapper for zlib'
 author:
-  - 'Johanna Amann <johanna@icir.org>'
+  - unknown
 build_requires: {}
 configure_requires:
   Alien::Base::ModuleBuild: '0.025'
@@ -17,7 +17,7 @@ name: Alien-zlib-Static
 provides:
   Alien::zlib::Static:
     file: lib/Alien/zlib/Static.pm
-    version: '0.10'
+    version: '1.000000'
 requires:
   Alien::Base: '0.025'
   File::ShareDir: '1.00'
@@ -27,5 +27,5 @@ resources:
   homepage: https://github.com/ollyg/alien-zlib-static
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ollyg/alien-zlib-static.git
-version: '0.10'
+version: '1.000000'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.011'
