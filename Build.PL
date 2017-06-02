@@ -38,7 +38,8 @@ my $builder = Alien::Base::ModuleBuild->new (
         },
     },
     script_files => [
-      'bin/zlib-env'
+      'bin/zlib-env-bash'
+      'bin/zlib-env-perl'
     ],
 );
 
