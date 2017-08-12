@@ -8,7 +8,7 @@ configure_requires:
   Module::Build: '0.38'
   Test::More: '0'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4222, CPAN::Meta::Converter version 2.150010'
+generated_by: 'Module::Build version 0.4224, CPAN::Meta::Converter version 2.150010'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,4 +28,4 @@ resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ollyg/alien-zlib-static.git
 version: '1.000000'
-x_serialization_backend: 'CPAN::Meta::YAML version 0.011'
+x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

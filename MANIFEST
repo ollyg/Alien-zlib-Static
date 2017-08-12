@@ -1,4 +1,5 @@
-bin/zlib-env
+bin/zlib-env-bash
+bin/zlib-env-perl
 Build.PL
 Changes
 lib/Alien/zlib/Static.pm
